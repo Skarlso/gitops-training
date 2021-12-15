@@ -1,0 +1,15 @@
+---
+apiVersion: wego.weave.works/v1alpha1
+kind: Application
+metadata:
+  labels:
+    wego.weave.works/app-identifier: wego-537c64250a9537cffd3e404daf6e33a8
+  name: pancake
+  namespace: wego-system
+spec:
+  branch: main
+  config_url: ssh://git@github.com/Skarlso/gitops-training.git
+  deployment_type: kustomize
+  path: ./
+  source_type: git
+  url: ssh://git@github.com/Skarlso/gitops-training.git
