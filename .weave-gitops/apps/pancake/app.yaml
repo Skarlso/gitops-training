@@ -3,7 +3,7 @@ apiVersion: wego.weave.works/v1alpha1
 kind: Application
 metadata:
   labels:
-    wego.weave.works/app-identifier: wego-537c64250a9537cffd3e404daf6e33a8
+    wego.weave.works/app-identifier: wego-6b5e94d122408e54da98ec606756ed3a
   name: pancake
   namespace: wego-system
 spec:
@@ -12,4 +12,4 @@ spec:
   deployment_type: kustomize
   path: ./
   source_type: git
-  url: ssh://git@github.com/Skarlso/gitops-training.git
+  url: ssh://git@github.com/Skarlso/podinfo-deploy.git
