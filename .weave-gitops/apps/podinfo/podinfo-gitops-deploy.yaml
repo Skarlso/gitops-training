@@ -1,14 +1,16 @@
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-kind: Kustomization
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
 metadata:
   name: podinfo
   namespace: wego-system
 spec:
-  interval: 1m0s
-  path: ./
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: podinfo
+  chart:
+    spec:
+      chart: podinfo
+      sourceRef:
+        kind: HelmRepository
+        name: podinfo
+  install: {}
+  interval: 5m0s
 
