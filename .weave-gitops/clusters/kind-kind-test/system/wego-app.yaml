@@ -14,7 +14,7 @@ spec:
       containers:
         - name: wego-app
           image: localhost:5000/weaveworks/wego-app:v0.6.1-4-g61a44cbf
-          args: ["ui", "run", "-l", "--helm-repo-namespace", "wego-system"]
+          args: ["ui", "run", "-l", "--helm-repo-namespace", "wego-system", "--helm-repo-name", "podinfo"]
           ports:
             - containerPort: 9001
               protocol: TCP
@@ -33,6 +33,7 @@ rules:
       - source.toolkit.fluxcd.io
     resources:
       - helmrepositories
+      - helmrepository
     verbs:
       - get
       - list
@@ -41,6 +42,7 @@ rules:
       - source.toolkit.fluxcd.io
     resources:
       - helmrepositories/finalizers
+      - helmrepository/finalizers
     verbs:
       - create
       - delete
@@ -51,6 +53,7 @@ rules:
       - source.toolkit.fluxcd.io
     resources:
       - helmrepositories/status
+      - helmrepository/status
     verbs:
       - get
 ---
