@@ -9,4 +9,3 @@ resources:
 - flux-system-kustomization-resource.yaml
 - flux-user-kustomization-resource.yaml
 - wego-app.yaml
-- helm-watcher.yaml
